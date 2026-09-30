@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">MultiMap</string>
+    <string name="wcv_tvPlaceWaypoint">Click on the map to put a waypoint</string>
+    <string name="wcv_tvTitle">Title:</string>
+    <string name="errorTitleExist">This title already exists</string>
+    <string name="wcv_tvDescription">Description:</string>
+    <string name="wcv_btnApplyWaypoint">Apply</string>
+</resources>
