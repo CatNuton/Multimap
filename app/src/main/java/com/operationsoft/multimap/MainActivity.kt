@@ -13,8 +13,11 @@ import androidx.core.graphics.drawable.toBitmap
 import com.operationsoft.multimap.lib.essentials.ApplyEventArgs
 import com.operationsoft.multimap.lib.essentials.Tools
 import com.operationsoft.multimap.lib.ui.WaypointViewActivity
+import org.osmdroid.config.Configuration
 import org.osmdroid.events.MapEventsReceiver
+import org.osmdroid.library.BuildConfig
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.tileprovider.tilesource.XYTileSource
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.MapEventsOverlay
@@ -48,10 +51,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        org.osmdroid.config.Configuration.getInstance()
+        Configuration.getInstance()
             .load(applicationContext,
                 getSharedPreferences("osmdroid_settings",
                     MODE_PRIVATE))
+        Configuration.getInstance().userAgentValue = this.packageName
         setContentView(R.layout.activity_main)
 
         mapView = findViewById(R.id.mapView)
